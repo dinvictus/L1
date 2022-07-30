@@ -17,7 +17,7 @@ func Work20() {
 	fmt.Println(str)
 }
 
-func ReverseWords_1(str string) string { // 995.4 ns/op		456 B/op		11 allocs/op
+func ReverseWords_1(str string) string { // 34349 ns/op		56248 B/op		151 allocs/op
 	splitStr := strings.Split(str, " ") // Разбиваем строку на срез строк по пробелу
 	resStr := ""
 	for i := len(splitStr) - 1; i >= 1; i-- { // Проходим по срезу в обратном порядке
@@ -27,7 +27,7 @@ func ReverseWords_1(str string) string { // 995.4 ns/op		456 B/op		11 allocs/op
 	return resStr
 }
 
-func ReverseWords_2(str string) string { // 508.4 ns/op		272 B/op		3 allocs/op  // Самый быстрый
+func ReverseWords_2(str string) string { // 6732 ns/op		5616 B/op		7 allocs/op
 	splitStr := strings.Split(str, " ")
 	var buffer bytes.Buffer // Используем байтовый буфер для записи слов
 	for i := len(splitStr) - 1; i >= 1; i-- {
@@ -38,7 +38,7 @@ func ReverseWords_2(str string) string { // 508.4 ns/op		272 B/op		3 allocs/op  
 	return buffer.String()
 }
 
-func ReverseWords_3(str string) string { // 544.6 ns/op		280 B/op		5 allocs/op
+func ReverseWords_3(str string) string { // 5525 ns/op		4600 B/op		9 allocs/op
 	splitStr := strings.Split(str, " ")
 	var strBuilder strings.Builder // Используем string.Builder для записи слов
 	for i := len(splitStr) - 1; i >= 1; i-- {
